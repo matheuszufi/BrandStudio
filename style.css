@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    height: 80px;
+    background: linear-gradient(to bottom, #000000, #3b3b3b);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: relative;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.header-logo {
+    height: 48px;
+    width: auto;
+    margin-right: 16px;
+}
+
+.brand {
+    font-family: 'Holtwood One SC', serif;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.studio {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 300;
+    opacity: 0.7;
+    margin-left: 6px;
+}
+
+.header-menu {
+    display: flex;
+    gap: 32px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.menu-link {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    background: none;
+    border: none;
+    padding: 8px 0;
+    transition: opacity 0.2s;
+    opacity: 0.9;
+}
+.menu-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.orcamento-btn {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(246, 246, 246, 0.8));
+    color: #222;
+    border: none;
+    padding: 12px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: filter 0.2s;
+}
+.orcamento-btn:hover {
+    filter: brightness(0.95);
+}
+
+
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    /* background: #ffffff; */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+}
+
+.hero-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.hero-logo-nome {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.hero-logo-img {
+    height: 64px;
+    width: auto;
+}
+
+.hero-subtitle {
+    margin-top: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    /* color: #000000; */
+    text-align: center;
+    font-weight: 400;
+}
+
+.hero-gifs {
+    display: flex;
+    gap: 32px;
+    margin: 32px 0 40px 0;
+    justify-content: center;
+}
+
+.hero-gif {
+    height: 80px;
+    width: auto;
+}
+
+.hero-contact-btn {
+    background: linear-gradient(to bottom, #000000, #3f3f3f);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 14px 38px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: filter 0.2s;
+    margin-bottom: 10px;
+}
+.hero-contact-btn:hover {
+    filter: brightness(1.15);
+}
