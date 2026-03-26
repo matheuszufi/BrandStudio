@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;900&display=swap');
 
 * {
     margin: 0;
@@ -42,7 +43,7 @@ header {
     font-family: 'Inter', sans-serif;
     font-size: 2rem;
     color: #fff;
-    font-weight: 300;
+    font-weight: 100;
     opacity: 0.7;
     margin-left: 6px;
 }
@@ -60,8 +61,8 @@ header {
     color: #fff;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 100;
     background: none;
     border: none;
     padding: 8px 0;
@@ -86,8 +87,8 @@ header {
     border: none;
     padding: 12px 28px;
     font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 100;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: filter 0.2s;
@@ -105,6 +106,7 @@ header {
     flex-direction: column;
     padding: 0 20px;
     /* background: #ffffff; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .hero-content {
@@ -126,7 +128,7 @@ header {
 .hero-logo-nome {
     display: flex;
     align-items: center;
-    gap: 16px;
+    /* gap: 16px; */
 }
 
 .hero-logo-img {
@@ -135,12 +137,11 @@ header {
 }
 
 .hero-subtitle {
-    margin-top: 18px;
     font-family: 'Inter', sans-serif;
     font-size: 1.25rem;
     /* color: #000000; */
     text-align: center;
-    font-weight: 400;
+    font-weight: 200;
 }
 
 .hero-gifs {
@@ -159,7 +160,6 @@ header {
     background: linear-gradient(to bottom, #000000, #3f3f3f);
     color: #fff;
     border: none;
-    border-radius: 24px;
     padding: 14px 38px;
     font-family: 'Inter', sans-serif;
     font-size: 1.15rem;
@@ -171,4 +171,274 @@ header {
 }
 .hero-contact-btn:hover {
     filter: brightness(1.15);
+}
+
+.hero-logo-nome .brand,
+.hero-logo-nome .studio {
+    font-size: 4rem;
+    background: linear-gradient(90deg, #000000 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stacks {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background: linear-gradient(to bottom, #DCDCDC, #FFFFFF);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.stacks img {
+    height: 40px;
+    width: auto;
+}
+
+/* SECTION DESENVOLVIMENTO */
+.desenvolvimento {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 40px 0;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.dev-titulo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 48px;
+}
+
+.dev-linha1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: #444;
+    text-align: left;
+}
+
+.dev-linha2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 3.2rem;
+    text-align: center;
+    background: linear-gradient(90deg, #2F2F2F 0%, #626262 49%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.08em;
+}
+
+.dev-linha3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: #444;
+    text-align: right;
+}
+
+.dev-topicos {
+    display: flex;
+    gap: 48px;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 60px;
+}
+
+.dev-topico {
+    flex: 1;
+}
+
+.dev-topico h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    background: linear-gradient(180deg, rgba(124, 124, 124, 0.79) 0%, rgba(0, 0, 0, 0.79) 53%, rgba(64, 64, 64, 0.79) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dev-topico p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #000;
+}
+
+.dev-fotos {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.dev-foto-placeholder {
+    flex: 1;
+    height: 280px;
+    background: linear-gradient(135deg, #e0e0e0 0%, #c4c4c4 100%);
+    border-radius: 8px;
+}
+
+/* SECTION SERVIÇO */
+.servico {
+    width: 100%;
+    background: #ffffff;
+    padding: 60px 40px;
+    box-sizing: border-box;
+}
+
+.servico-inner {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.51);
+}
+
+.servico-esquerda {
+    flex: 1;
+    background: linear-gradient(113deg, #5E5E5E 0%, #1C1C1C 100%);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.servico-titulo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.servico-linha1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.servico-linha2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: #fff;
+    letter-spacing: 0.15em;
+}
+
+.servico-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.servico-checklist li {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 0.95rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.6;
+}
+
+.servico-checklist li::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+}
+
+.servico-btn-whatsapp {
+    background: linear-gradient(90deg, rgba(250, 255, 105, 0.86) 0%, rgba(255, 249, 69, 0.86) 100%);
+    color: #000;
+    border: none;
+    padding: 14px 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: fit-content;
+    transition: filter 0.2s;
+}
+
+.servico-btn-whatsapp:hover {
+    filter: brightness(1.05);
+}
+
+.servico-direita {
+    flex: 1;
+    background: linear-gradient(180deg, #F3F3F3 0%, #D5D5D5 100%);
+    padding: 48px 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.servico-direita-titulo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.servico-dir-linha1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.servico-dir-linha2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    background: linear-gradient(90deg, #050505 0%, #B8B8B8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.servico-topicos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 40px;
+}
+
+.servico-topico h4 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    background: linear-gradient(180deg, rgba(124, 124, 124, 0.79) 0%, rgba(0, 0, 0, 0.79) 53%, rgba(64, 64, 64, 0.79) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.servico-topico p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #000;
 }
