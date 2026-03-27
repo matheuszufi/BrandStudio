@@ -31,6 +31,9 @@
                 <div class="hero-subtitle">
                     Especializados em Desenvolvimento de&nbsp;Sites Institucionais
                 </div>
+                <div class="hero-subtitle2">
+                    Buscando a melhor solução para automatizar os processos da sua empresa
+                </div>
             </div>
             <div class="hero-gifs">
                 <img src="imagens/icons/grafico-teste.gif" alt="Gráfico" class="hero-gif">
@@ -38,6 +41,7 @@
             </div>
             <button class="hero-contact-btn">Entrar em contato</button>
         </div>
+        <div class="hero-scroll-indicator">&#x276E;</div>
     </section>
     <section class="stacks">
         <img src="imagens/stacks/react-logo.svg" alt="React">
@@ -70,9 +74,22 @@
                 <p>Aqui, desenvolvemos efetivamente o projeto visual, levando em conta todas as informações levantadas até o momento, bem como todos os conceitos adquiridos ao longo dos anos de experiência de cada designer envolvido com o projeto. Nesta etapa, as ideias fluem soltas à exaustão para garantir que as melhores escolhas tenham sido tomadas para o web design.</p>
             </div>
         </div>
-        <div class="dev-fotos">
-            <div class="dev-foto-placeholder"></div>
-            <div class="dev-foto-placeholder"></div>
+        <div class="dev-fotos-container">
+            <div class="dev-fotos">
+                <div class="dev-foto-card">
+                    <div class="dev-foto-wrapper">
+                        <img src="imagens/projects/projeto1.png" alt="Projeto 1">
+                    </div>
+                </div>
+                <div class="dev-foto-card">
+                    <div class="dev-foto-wrapper">
+                        <img src="imagens/projects/projeto2.png" alt="Projeto 2">
+                    </div>
+                </div>
+            </div>
+            <div class="dev-fotos-overlay">
+                <button class="dev-fotos-btn" onclick="this.closest('.dev-fotos-container').classList.toggle('expanded')">&#x276E;</button>
+            </div>
         </div>
     </section>
     <section class="servico">
@@ -127,5 +144,9 @@
             </div>
         </div>
     </section>
+    <a href="https://wa.me/5543999909090" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <img src="imagens/whatsapp-logo-black.png" alt="WhatsApp">
+    </a>
+    <script src="header-scroll.js"></script>
 </body>
 </html>
