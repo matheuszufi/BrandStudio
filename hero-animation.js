@@ -74,3 +74,20 @@ document.querySelectorAll('.hero-float-logo').forEach((logo, i) => {
 
     animate();
 });
+
+// Navegador2 reveal effect - circle follows mouse
+const wrapper = document.querySelector('.hero-navegador-wrapper');
+const nav2 = document.querySelector('.hero-navegador2-img');
+
+if (wrapper && nav2) {
+    wrapper.addEventListener('mousemove', (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        nav2.style.clipPath = `circle(80px at ${x}px ${y}px)`;
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+        nav2.style.clipPath = 'circle(0px at 50% 50%)';
+    });
+}
