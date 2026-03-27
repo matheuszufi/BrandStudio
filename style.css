@@ -118,7 +118,7 @@ header.scrolled .menu-link {
     justify-content: flex-end;
 }
 
-.orcamento-btn {
+.projetos-btn {
     background: linear-gradient(to bottom, #000, #3f3f3f);
     color: #fff;
     border: none;
@@ -131,11 +131,11 @@ header.scrolled .menu-link {
     transition: filter 0.2s, background 1s, color 1s;
 }
 
-header.scrolled .orcamento-btn {
+header.scrolled .projetos-btn {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(246, 246, 246, 0.8));
     color: #222;
 }
-.orcamento-btn:hover {
+.projetos-btn:hover {
     filter: brightness(0.95);
 }
 
@@ -365,7 +365,7 @@ header.scrolled .orcamento-btn {
 }
 
 .stacks img {
-    height: 40px;
+    height: 30px;
     width: auto;
 }
 
@@ -583,7 +583,7 @@ header.scrolled .orcamento-btn {
 .servico-linha2 {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
-    font-size: 2.8rem;
+    font-size: 2rem;
     color: #fff;
     letter-spacing: 0.15em;
 }
@@ -660,7 +660,7 @@ header.scrolled .orcamento-btn {
 .servico-dir-linha2 {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
-    font-size: 2.2rem;
+    font-size: 2rem;
     background: linear-gradient(90deg, #050505 0%, #B8B8B8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -742,7 +742,7 @@ html {
         font-size: 0.9rem;
     }
 
-    .orcamento-btn {
+    .projetos-btn {
         padding: 10px 20px;
         font-size: 0.75rem;
     }
@@ -815,7 +815,7 @@ html {
         font-size: 0.9rem;
     }
 
-    .orcamento-btn {
+    .projetos-btn {
         padding: 10px 20px;
         font-size: 0.75rem;
     }
@@ -977,7 +977,7 @@ html {
         margin-left: 4px;
     }
 
-    .orcamento-btn {
+    .projetos-btn {
         padding: 8px 14px;
         font-size: 0.7rem;
     }
