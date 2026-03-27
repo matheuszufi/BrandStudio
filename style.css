@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -118,6 +119,7 @@ header {
     /* background: url('imagens/backgroundhero.webp') center/cover no-repeat; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: relative;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -127,10 +129,29 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(40px);
+    background: linear-gradient(to bottom, rgba(237, 237, 237, 0.8), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 0;
+}
+
+.hero-float-logo {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-float-logo-1 {
+    top: 10%;
+    left: 5%;
+}
+
+.hero-float-logo-2 {
+    bottom: 15%;
+    right: 8%;
 }
 
 .hero-content {
@@ -587,6 +608,9 @@ body {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .whatsapp-float:hover {
@@ -597,4 +621,441 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+html {
+    overflow-x: hidden;
+}
+
+/* Tablet (max 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 0 24px;
+    }
+
+    .header-menu {
+        gap: 20px;
+    }
+
+    .menu-link {
+        font-size: 0.9rem;
+    }
+
+    .orcamento-btn {
+        padding: 10px 20px;
+        font-size: 0.75rem;
+    }
+
+    .hero-logo-nome .brand,
+    .hero-logo-nome .studio {
+        font-size: 3.2rem;
+    }
+
+    .stacks {
+        gap: 32px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 24px 20px;
+    }
+
+    .stacks img {
+        height: 32px;
+    }
+
+    .desenvolvimento {
+        padding: 60px 24px 0;
+    }
+
+    .dev-topicos {
+        gap: 28px;
+    }
+
+    .dev-linha2 {
+        font-size: 2.6rem;
+    }
+
+    .servico {
+        padding: 60px 20px;
+    }
+
+    .servico-esquerda,
+    .servico-direita {
+        padding: 36px 28px;
+    }
+
+    .servico-linha2 {
+        font-size: 2.2rem;
+    }
+
+    .servico-topicos {
+        gap: 20px 24px;
+    }
+}
+
+/* Tablet small / Large mobile (max 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 0 20px;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+    .header-logo {
+        height: 38px;
+    }
+
+    .brand {
+        font-size: 1.3rem;
+    }
+
+    .studio {
+        font-size: 0.9rem;
+    }
+
+    .orcamento-btn {
+        padding: 10px 20px;
+        font-size: 0.75rem;
+    }
+
+    .hero {
+        padding: 0 24px;
+    }
+
+    .hero-logo-img {
+        height: 56px;
+    }
+
+    .hero-logo-nome {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-logo-nome .brand,
+    .hero-logo-nome .studio {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+    }
+
+    .hero-subtitle2 {
+        font-size: 1rem;
+    }
+
+    .hero-contact-btn {
+        padding: 14px 36px;
+        font-size: 1rem;
+    }
+
+    .stacks {
+        gap: 24px;
+        padding: 20px 16px;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .stacks img {
+        height: 28px;
+    }
+
+    .desenvolvimento {
+        padding: 48px 20px 0;
+    }
+
+    .dev-titulo {
+        margin-bottom: 36px;
+    }
+
+    .dev-linha2 {
+        font-size: 2rem;
+    }
+
+    .dev-topicos {
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+
+    .dev-topico h3 {
+        font-size: 1.3rem;
+    }
+
+    .dev-topico p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .dev-fotos {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .dev-fotos-container .dev-fotos {
+        max-height: 280px;
+    }
+
+    .dev-ver-projetos-btn {
+        margin-top: 24px;
+        padding: 14px 32px;
+        font-size: 1rem;
+    }
+
+    .servico {
+        padding: 48px 16px;
+    }
+
+    .servico-inner {
+        flex-direction: column;
+        border-radius: 16px;
+    }
+
+    .servico-esquerda,
+    .servico-direita {
+        padding: 36px 24px;
+    }
+
+    .servico-linha2 {
+        font-size: 2rem;
+    }
+
+    .servico-dir-linha2 {
+        font-size: 1.8rem;
+    }
+
+    .servico-topicos {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .servico-checklist li {
+        font-size: 1rem;
+    }
+
+    .servico-topico h4 {
+        font-size: 1.05rem;
+    }
+
+    .servico-topico p {
+        font-size: 0.95rem;
+    }
+
+    .servico-btn-whatsapp {
+        padding: 14px 32px;
+        font-size: 1rem;
+    }
+
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Mobile (max 480px) */
+@media (max-width: 480px) {
+    header {
+        height: 60px;
+        padding: 0 16px;
+    }
+
+    .header-logo {
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .brand {
+        font-size: 1.1rem;
+    }
+
+    .studio {
+        font-size: 0.8rem;
+        margin-left: 4px;
+    }
+
+    .orcamento-btn {
+        padding: 8px 14px;
+        font-size: 0.7rem;
+    }
+
+    .hero {
+        padding: 0 20px;
+        min-height: 100svh;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-logo-img {
+        height: 120px;
+
+    }
+
+    .hero-logo-nome {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-logo-nome .brand,
+    .hero-logo-nome .studio {
+        line-height: 0.9;
+    }
+    .hero-logo-nome .brand {
+        font-size: 4rem;
+    }
+    .hero-logo-nome .studio {
+        margin-left: 0;
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle2 {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-top {
+        margin-bottom: 28px;
+    }
+
+    .hero-contact-btn {
+        padding: 14px 32px;
+        font-size: 1.6rem;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+
+    }
+
+    .stacks {
+        gap: 16px 20px;
+        padding: 18px 16px;
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+    }
+
+    .stacks img {
+        height: 24px;
+    }
+
+    .desenvolvimento {
+        padding: 40px 16px 0;
+    }
+
+    .dev-titulo {
+        margin-bottom: 28px;
+    }
+
+    .dev-linha1,
+    .dev-linha3 {
+        font-size: 1rem;
+    }
+
+    .dev-linha2 {
+        font-size: 1.6rem;
+        letter-spacing: 0.04em;
+    }
+
+    .dev-topicos {
+        flex-direction: column;
+        gap: 28px;
+        margin-bottom: 36px;
+    }
+
+    .dev-topico h3 {
+        font-size: 1.2rem;
+    }
+
+    .dev-topico p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .dev-fotos {
+        flex-direction: column;
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .dev-fotos-container .dev-fotos {
+        max-height: 220px;
+    }
+
+    .dev-ver-projetos-btn {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .servico {
+        padding: 36px 12px;
+    }
+
+    .servico-inner {
+        border-radius: 12px;
+    }
+
+    .servico-esquerda,
+    .servico-direita {
+        padding: 28px 20px;
+    }
+
+    .servico-linha1,
+    .servico-dir-linha1 {
+        font-size: 1rem;
+    }
+
+    .servico-linha2 {
+        font-size: 1.8rem;
+        letter-spacing: 0.08em;
+    }
+
+    .servico-dir-linha2 {
+        font-size: 1.6rem;
+    }
+
+    .servico-checklist li {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .servico-btn-whatsapp {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .servico-topicos {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .servico-topico p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .servico-topico h4 {
+        font-size: 1rem;
+    }
+
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        bottom: 16px;
+        right: 16px;
+    }
 }
