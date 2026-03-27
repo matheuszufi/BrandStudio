@@ -91,3 +91,20 @@ if (wrapper && nav2) {
         nav2.style.clipPath = 'circle(0px at 50% 50%)';
     });
 }
+
+// Program2 reveal effect - circle follows mouse
+const programWrapper = document.querySelector('.dev-program-wrapper');
+const prog2 = document.querySelector('.dev-program2-img');
+
+if (programWrapper && prog2) {
+    programWrapper.addEventListener('mousemove', (e) => {
+        const rect = programWrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        prog2.style.clipPath = `circle(80px at ${x}px ${y}px)`;
+    });
+
+    programWrapper.addEventListener('mouseleave', () => {
+        prog2.style.clipPath = 'circle(0px at 50% 50%)';
+    });
+}

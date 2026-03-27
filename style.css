@@ -419,14 +419,86 @@ header.scrolled .projetos-btn {
 
 .dev-topicos {
     display: flex;
-    gap: 48px;
-    width: 100%;
-    max-width: 1100px;
-    margin-bottom: 60px;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
 }
 
 .dev-topico {
-    flex: 1;
+    flex: none;
+}
+
+.dev-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.dev-esquerda {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.dev-program-img {
+    max-width: 550px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.dev-program-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.dev-program2-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    pointer-events: none;
+    clip-path: circle(0px at 50% 50%);
+}
+
+/* SECTION PROJETOS */
+.projetos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 40px 0;
+    box-sizing: border-box;
+}
+
+.projetos-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.projetos-linha1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.projetos-linha2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 3.2rem;
+    background: linear-gradient(90deg, #2F2F2F 0%, #626262 49%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.08em;
 }
 
 .dev-topico h3 {
