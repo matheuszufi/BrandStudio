@@ -57,6 +57,7 @@
     z-index: 1;
     pointer-events: none;
     width: 100%;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .dev-fotos-container.expanded .dev-foto-navegador .navegador-tela {
