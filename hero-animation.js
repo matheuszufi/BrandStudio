@@ -129,48 +129,85 @@ if (programWrapper && prog2) {
 // Scroll-driven hero video zoom-out animation
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".hero-video", {
-    scale: 0.7,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        pin: true,
-        scrub: true,
-    }
-});
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-gsap.to(".hero-overlay", {
-    scale: 0.7,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-    }
-});
+if (!isMobile) {
+    gsap.to(".hero-video", {
+        scale: 0.7,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            pin: true,
+            scrub: true,
+        }
+    });
+
+    gsap.to(".hero-overlay", {
+        scale: 0.7,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+        }
+    });
+}
 
 // Scroll-driven etapas slide animations
 const etapas = document.querySelectorAll('.etapa');
 
 etapas.forEach((etapa, i) => {
-    const fromLeft = i % 2 === 0; // 0 and 2 from left, 1 from right
-    const xStart = fromLeft ? -100 : 100;
-
-    gsap.fromTo(etapa, 
-        { xPercent: xStart, opacity: 0 },
-        {
-            xPercent: 0,
-            opacity: 1,
-            ease: "none",
-            scrollTrigger: {
-                trigger: etapa,
-                start: "top 95%",
-                end: "top 60%",
-                scrub: 1.5,
+    if (isMobile) {
+        gsap.fromTo(etapa,
+            { y: 40, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: etapa,
+                    start: "top 95%",
+                    end: "top 75%",
+                    scrub: 1,
+                }
             }
-        }
-    );
+        );
+    } else {
+        const fromLeft = i % 2 === 0;
+        const xStart = fromLeft ? -100 : 100;
+
+        gsap.fromTo(etapa,
+            { xPercent: xStart, opacity: 0 },
+            {
+                xPercent: 0,
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: etapa,
+                    start: "top 95%",
+                    end: "top 60%",
+                    scrub: 1.5,
+                }
+            }
+        );
+    }
 });
+
+// Scroll-driven desenvolvimento exit animation (scale down)
+if (!isMobile) {
+    gsap.to(".desenvolvimento", {
+        scale: 0.7,
+        opacity: 0.5,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".desenvolvimento",
+            start: "bottom bottom",
+            end: "bottom top",
+            scrub: 1.5,
+            pin: true,
+        }
+    });
+}
