@@ -151,3 +151,26 @@ gsap.to(".hero-overlay", {
         scrub: true,
     }
 });
+
+// Scroll-driven etapas slide animations
+const etapas = document.querySelectorAll('.etapa');
+
+etapas.forEach((etapa, i) => {
+    const fromLeft = i % 2 === 0; // 0 and 2 from left, 1 from right
+    const xStart = fromLeft ? -100 : 100;
+
+    gsap.fromTo(etapa, 
+        { xPercent: xStart, opacity: 0 },
+        {
+            xPercent: 0,
+            opacity: 1,
+            ease: "none",
+            scrollTrigger: {
+                trigger: etapa,
+                start: "top 95%",
+                end: "top 60%",
+                scrub: 1.5,
+            }
+        }
+    );
+});
