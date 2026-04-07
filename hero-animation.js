@@ -125,3 +125,29 @@ if (programWrapper && prog2) {
         prog2.style.clipPath = 'circle(0px at 50% 50%)';
     });
 }
+
+// Scroll-driven hero video zoom-out animation
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".hero-video", {
+    scale: 0.7,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        pin: true,
+        scrub: true,
+    }
+});
+
+gsap.to(".hero-overlay", {
+    scale: 0.7,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+    }
+});

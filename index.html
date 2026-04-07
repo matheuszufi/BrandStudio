@@ -13,7 +13,7 @@
     </a>
     <header>
         <div class="header-left">
-            <img src="imagens/logo.png" alt="Logo" class="header-logo">
+            <img src="imagens/logo-white.png" alt="Logo" class="header-logo">
             <span class="brand">Brand</span><span class="studio">Studio</span>
         </div>
         <nav class="header-menu">
@@ -26,13 +26,15 @@
         </div>
     </header>
     <section class="hero">
-        <img src="imagens/logo.png" alt="" class="hero-float-logo hero-float-logo-1">
-        <img src="imagens/logo.png" alt="" class="hero-float-logo hero-float-logo-2">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="imagens/bg-hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-inner">
             <div class="hero-content">
                 <div class="hero-top">
                     <div class="hero-logo-nome">
-                        <img src="imagens/logo.png" alt="Logo" class="hero-logo-img">
+                        <img src="imagens/logo-white.png" alt="Logo" class="hero-logo-img">
                         <span class="brand">brand</span><span class="studio">Studio</span>
                     </div>
                     <div class="hero-subtitle">
@@ -56,16 +58,6 @@
                     <button class="primary-button">SOLICITE UM ORÇAMENTO</button>
                 </div>
             </div>
-            <div class="hero-right">
-                <div class="hero-mobile-wrapper">
-                    <img src="imagens/navegador-mobile-bw.png" alt="Mobile" class="hero-mobile-img">
-                    <img src="imagens/navegador-mobile.png" alt="Mobile Color" class="hero-mobile2-img">
-                </div>
-                <div class="hero-navegador-wrapper">
-                    <img src="imagens/navegador1.png" alt="Navegador" class="hero-navegador-img">
-                    <img src="imagens/navegador2.png" alt="Navegador 2" class="hero-navegador2-img">
-                </div>
-            </div>
         </div>
         <div class="hero-scroll-indicator">&#x276E;</div>
     </section>
@@ -80,12 +72,48 @@
         <img src="imagens/stacks/figma-logo.svg" alt="Figma">
         <img src="imagens/stacks/photoshop-logo.svg" alt="Photoshop"> -->
     </section>
+    <section class="etapas">
+        <div class="etapa">
+            <div class="etapa-video">
+                <video autoplay muted loop playsinline>
+                    <source src="imagens/briefing.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="etapa-texto">
+                <h3 class="etapa-titulo">Briefing</h3>
+                <p class="etapa-desc">A primeira etapa do projeto de web design é a formação de um briefing. Nesta etapa, reunimos todas as informações disponíveis sobre o projeto, sua empresa, seu perfil, seu público alvo e seus concorrentes. Todas as informações importantes são separadas e fornecidas a todos os designers que trabalharão no projeto.</p>
+            </div>
+        </div>
+        <div class="etapa">
+            <div class="etapa-video">
+                <video autoplay muted loop playsinline>
+                    <source src="imagens/design.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="etapa-texto">
+                <h3 class="etapa-titulo">Design</h3>
+                <p class="etapa-desc">Nossa equipe conta com Designers especializados que vão buscar o layout que mais agrade você e seu público. Criamos propostas visuais alinhadas à identidade da sua marca, garantindo uma experiência única e profissional para o seu site.</p>
+            </div>
+        </div>
+        <div class="etapa">
+            <div class="etapa-video">
+                <video autoplay muted loop playsinline>
+                    <source src="imagens/desenvolvimento.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="etapa-texto">
+                <h3 class="etapa-titulo">Desenvolvimento</h3>
+                <p class="etapa-desc">Aqui, desenvolvemos efetivamente o projeto visual, levando em conta todas as informações levantadas até o momento, bem como todos os conceitos adquiridos ao longo dos anos de experiência de cada designer envolvido com o projeto. Nesta etapa, as ideias fluem soltas à exaustão para garantir que as melhores escolhas tenham sido tomadas para o web design.</p>
+            </div>
+        </div>
+    </section>
     <section class="desenvolvimento">
         <div class="dev-titulo">
             <span class="dev-linha1">Como é feito o</span>
             <span class="dev-linha2">DESENVOLVIMENTO</span>
             <span class="dev-linha3">dos projetos.</span>
         </div>
+        <div class="dev-inner">
         <div class="dev-row">
             <div class="dev-row-img">
                 <div class="palette-card">
@@ -290,6 +318,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
     <section class="projetos">
         <div class="projetos-titulo">
@@ -416,6 +445,7 @@
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="header-scroll.js"></script>
     <script src="hero-animation.js"></script>
 </body>
