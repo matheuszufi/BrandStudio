@@ -92,6 +92,23 @@ if (wrapper && nav2) {
     });
 }
 
+// Mobile reveal effect - circle follows mouse
+const mobileWrapper = document.querySelector('.hero-mobile-wrapper');
+const mobile2 = document.querySelector('.hero-mobile2-img');
+
+if (mobileWrapper && mobile2) {
+    mobileWrapper.addEventListener('mousemove', (e) => {
+        const rect = mobileWrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        mobile2.style.clipPath = `circle(80px at ${x}px ${y}px)`;
+    });
+
+    mobileWrapper.addEventListener('mouseleave', () => {
+        mobile2.style.clipPath = 'circle(0px at 50% 50%)';
+    });
+}
+
 // Program2 reveal effect - circle follows mouse
 const programWrapper = document.querySelector('.dev-program-wrapper');
 const prog2 = document.querySelector('.dev-program2-img');
