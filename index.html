@@ -48,7 +48,6 @@
         <div class="hero-scroll-indicator">&#x276E;</div>
     </section>
     <section class="concorrente">
-        <img src="imagens/logo.png" alt="" class="concorrente-logo">
         <p class="concorrente-texto1">Seu concorrente já está na internet.</p>
         <p class="concorrente-texto2">Quem é mais visto é mais lembrado!</p>
     </section>
@@ -140,55 +139,6 @@
     <script src="hero-animation.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
-
-        gsap.set('.concorrente-texto1', { xPercent: -100, opacity: 0 });
-        gsap.set('.concorrente-texto2', { xPercent: -100, opacity: 0 });
-        gsap.set('.concorrente-logo', {
-            left: '50%', top: '50%', xPercent: -50, yPercent: -50,
-            height: '100%', width: 'auto', rotation: 0, opacity: 0
-        });
-
-        function createConcorrenteAnimation(endValue) {
-            const concorrenteTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.concorrente',
-                    start: 'top top',
-                    end: endValue,
-                    scrub: 1,
-                    pin: true,
-                    anticipatePin: 1
-                }
-            });
-
-            concorrenteTl.to('.concorrente-logo',
-                { rotation: 720, opacity: 0.6, duration: 5.1, ease: 'none' }, 0
-            );
-
-            concorrenteTl.to('.concorrente-texto1',
-                { xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out' }, 0
-            );
-            concorrenteTl.to({}, { duration: 0.3 });
-            concorrenteTl.to('.concorrente-texto2',
-                { xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out' }
-            );
-            concorrenteTl.to({}, { duration: 0.5 });
-            concorrenteTl.to('.concorrente-texto1',
-                { xPercent: 100, opacity: 0, duration: 1, ease: 'power2.in' }
-            );
-            concorrenteTl.to({}, { duration: 0.3 });
-            concorrenteTl.to('.concorrente-texto2',
-                { xPercent: 100, opacity: 0, duration: 1, ease: 'power2.in' }
-            );
-        }
-
-        ScrollTrigger.matchMedia({
-            "(min-width: 769px)": function() {
-                createConcorrenteAnimation('+=300%');
-            },
-            "(max-width: 768px)": function() {
-                createConcorrenteAnimation('+=200%');
-            }
-        });
 
         // Servicos card selection
         (function() {
