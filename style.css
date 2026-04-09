@@ -616,6 +616,167 @@ header.scrolled .projetos-btn {
     background-clip: text;
 }
 
+/* SECTION CONCORRENTE */
+.concorrente {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.concorrente-texto1,
+.concorrente-texto2 {
+    font-family: 'Holtwood One SC', serif;
+    font-size: 4rem;
+    color: #000;
+    text-align: center;
+    line-height: 1.3;
+    max-width: 900px;
+    will-change: transform, opacity;
+}
+
+/* SECTION SERVIÇOS */
+.servicos-section {
+    width: 100%;
+    background: #f5f5f5;
+    padding: 80px 40px;
+    box-sizing: border-box;
+}
+
+.servicos-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+}
+
+.servicos-etapas {
+    flex: 1;
+}
+
+.servicos-lista-container {
+    flex: 1;
+}
+
+.servicos-section-titulo {
+    font-family: 'Holtwood One SC', serif;
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 32px;
+}
+
+.etapas-lista {
+    list-style: none;
+    padding: 0;
+    counter-reset: etapa;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.etapas-lista li {
+    counter-increment: etapa;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.5;
+}
+
+.etapas-lista li::before {
+    content: counter(etapa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.servicos-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.servico-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.servico-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.servico-nome {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #000;
+}
+
+.servico-preco {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #000;
+    white-space: nowrap;
+}
+
+.servico-obs {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 6px;
+}
+
+.servicos-manutencao {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 24px;
+    line-height: 1.5;
+}
+
+.servicos-cta-btn {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 14px 36px;
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.08rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.servicos-cta-btn:hover {
+    background: #333;
+}
+
 .stacks {
     width: 100%;
     height: 0px;
@@ -884,6 +1045,7 @@ header.scrolled .projetos-btn {
     align-items: center;
     gap: 60px;
     width: 100%;
+        padding: 30px 0;
 }
 
 .dev-row-reverse {
@@ -895,6 +1057,7 @@ header.scrolled .projetos-btn {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .dev-row-text {
@@ -1902,6 +2065,31 @@ html {
         bottom: 20px;
         right: 20px;
     }
+
+    .servicos-inner {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .servicos-section {
+        padding: 60px 24px;
+    }
+
+    .concorrente {
+        padding: 60px 24px;
+    }
+
+    .concorrente-texto1,
+    .concorrente-texto2 {
+        font-size: 2.4rem;
+        max-width: 100%;
+    }
+
+    .servico-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
 }
 
 /* Mobile (max 480px) */
@@ -2107,5 +2295,53 @@ html {
         height: 52px;
         bottom: 16px;
         right: 16px;
+    }
+
+    .servicos-section {
+        padding: 48px 16px;
+    }
+
+    .servicos-section-titulo {
+        font-size: 1.4rem;
+    }
+
+    .servicos-cta-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .concorrente {
+        padding: 40px 16px;
+    }
+
+    .concorrente-texto1,
+    .concorrente-texto2 {
+        font-size: 1.6rem;
+        line-height: 1.4;
+        max-width: 100%;
+    }
+
+    .servico-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .servico-nome {
+        font-size: 0.9rem;
+    }
+
+    .servico-preco {
+        font-size: 0.85rem;
+    }
+
+    .etapas-lista li {
+        font-size: 0.9rem;
+    }
+
+    .etapas-lista li::before {
+        min-width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
     }
 }
