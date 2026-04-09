@@ -48,6 +48,8 @@
         <div class="hero-scroll-indicator">&#x276E;</div>
     </section>
     <section class="concorrente">
+        <img src="imagens/logo.png" alt="" class="concorrente-logo concorrente-logo-1">
+        <img src="imagens/logo.png" alt="" class="concorrente-logo concorrente-logo-2">
         <p class="concorrente-texto1">Seu concorrente já está na internet.</p>
         <p class="concorrente-texto2">Quem é mais visto é mais lembrado!</p>
     </section>
@@ -143,6 +145,8 @@
         // Set initial state
         gsap.set('.concorrente-texto1', { xPercent: -100, opacity: 0 });
         gsap.set('.concorrente-texto2', { xPercent: -100, opacity: 0 });
+        gsap.set('.concorrente-logo-1', { left: '-180px', rotation: 0, opacity: 0 });
+        gsap.set('.concorrente-logo-2', { left: '-120px', rotation: 0, opacity: 0 });
 
         function createConcorrenteAnimation(endValue) {
             const concorrenteTl = gsap.timeline({
@@ -156,8 +160,21 @@
                 }
             });
 
+            // Logo 1 — slower, full span, 360° rotation
+            concorrenteTl.to('.concorrente-logo-1',
+                { left: 'calc(100% + 180px)', rotation: 360, opacity: 0.07, duration: 5.1, ease: 'none' },
+                0
+            );
+
+            // Logo 2 — faster, starts slightly later, 720° rotation
+            concorrenteTl.to('.concorrente-logo-2',
+                { left: 'calc(100% + 120px)', rotation: 720, opacity: 0.07, duration: 4.5, ease: 'none' },
+                0.3
+            );
+
             concorrenteTl.to('.concorrente-texto1',
-                { xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out' }
+                { xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out' },
+                0
             );
             concorrenteTl.to({}, { duration: 0.3 });
             concorrenteTl.to('.concorrente-texto2',
