@@ -72,49 +72,58 @@
             <div class="servicos-lista-container">
                 <h2 class="servicos-section-titulo">Serviços:</h2>
                 <div class="servicos-cards">
-                    <div class="servico-card">
+                    <div class="servico-card" data-price="599.90">
                         <div class="servico-card-header">
                             <span class="servico-nome">Landing Page</span>
                             <span class="servico-preco">R$599,90</span>
                         </div>
                         <p class="servico-obs">Não incluso desenvolvimento de conteúdo e layout da página</p>
                     </div>
-                    <div class="servico-card">
+                    <div class="servico-card" data-price="99.90">
                         <div class="servico-card-header">
                             <span class="servico-nome">Design</span>
                             <span class="servico-preco">R$99,90</span>
                         </div>
                         <p class="servico-obs">Desenvolvimento de layout personalizado.</p>
                     </div>
-                    <div class="servico-card">
+                    <div class="servico-card" data-price="49.90">
                         <div class="servico-card-header">
                             <span class="servico-nome">Integração de API</span>
                             <span class="servico-preco">R$49,90</span>
                         </div>
                     </div>
-                    <div class="servico-card">
+                    <div class="servico-card" data-price="49.90">
                         <div class="servico-card-header">
                             <span class="servico-nome">SEO</span>
                             <span class="servico-preco">R$49,90</span>
                         </div>
                     </div>
-                    <div class="servico-card">
+                    <div class="servico-card" data-price="49.90">
                         <div class="servico-card-header">
                             <span class="servico-nome">Colocar o domínio próprio</span>
                             <span class="servico-preco">R$49,90</span>
                         </div>
                     </div>
-                    <div class="servico-card">
+                    <div class="servico-card" data-price="1999.90">
                         <div class="servico-card-header">
                             <span class="servico-nome">Sistema</span>
                             <span class="servico-preco">a partir de R$1.999,90</span>
                         </div>
                     </div>
-                    <div class="servico-card">
+                    <div class="servico-card" data-price="499.90">
                         <div class="servico-card-header">
                             <span class="servico-nome">Integração de sistema de pagamento</span>
                             <span class="servico-preco">R$499,90</span>
                         </div>
+                    </div>
+                </div>
+
+                <div class="servicos-subtotal" style="display: none;">
+                    <h3 class="subtotal-titulo">Resumo:</h3>
+                    <ul class="subtotal-lista"></ul>
+                    <div class="subtotal-total">
+                        <span>Total:</span>
+                        <span class="subtotal-valor">R$0,00</span>
                     </div>
                 </div>
                 <p class="servicos-manutencao">Após o projeto terminado o custo é de <strong>R$16,00 a hora</strong> ou por manutenção.</p>
@@ -164,15 +173,66 @@
         }
 
         ScrollTrigger.matchMedia({
-            // Desktop
             "(min-width: 769px)": function() {
                 createConcorrenteAnimation('+=300%');
             },
-            // Mobile / Tablet
             "(max-width: 768px)": function() {
                 createConcorrenteAnimation('+=200%');
             }
         });
+
+        // Servicos card selection
+        (function() {
+            const cards = document.querySelectorAll('.servico-card[data-price]');
+            const subtotalBox = document.querySelector('.servicos-subtotal');
+            const subtotalLista = document.querySelector('.subtotal-lista');
+            const subtotalValor = document.querySelector('.subtotal-valor');
+            const ctaBtn = document.querySelector('.servicos-cta-btn');
+            const whatsNumber = '5543999909090';
+
+            function formatBRL(value) {
+                return 'R$' + value.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            }
+
+            function updateSubtotal() {
+                const selected = document.querySelectorAll('.servico-card.selected');
+                subtotalLista.innerHTML = '';
+                let total = 0;
+                var servicosTexto = [];
+
+                selected.forEach(function(card) {
+                    const nome = card.querySelector('.servico-nome').textContent;
+                    const price = parseFloat(card.dataset.price);
+                    total += price;
+                    servicosTexto.push('- ' + nome + ' (' + formatBRL(price) + ')');
+
+                    const li = document.createElement('li');
+                    li.innerHTML = '<span>' + nome + '</span><span>' + formatBRL(price) + '</span>';
+                    subtotalLista.appendChild(li);
+                });
+
+                subtotalValor.textContent = formatBRL(total);
+                subtotalBox.style.display = selected.length > 0 ? 'block' : 'none';
+
+                // Update WhatsApp link
+                if (selected.length > 0) {
+                    var msg = 'Olá! Vim pelo site da BrandStudio. Tenho interesse nos seguintes serviços:\n\n' +
+                        servicosTexto.join('\n') +
+                        '\n\nTotal: ' + formatBRL(total);
+                    ctaBtn.href = 'https://wa.me/' + whatsNumber + '?text=' + encodeURIComponent(msg);
+                } else {
+                    ctaBtn.href = 'https://wa.me/' + whatsNumber;
+                }
+            }
+
+            cards.forEach(function(card) {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', function() {
+                    card.classList.toggle('selected');
+                    updateSubtotal();
+                });
+            });
+        })();
     </script>
 </body>
 </html>

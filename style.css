@@ -777,6 +777,72 @@ header.scrolled .projetos-btn {
     background: #333;
 }
 
+/* Servico card selection */
+.servico-card {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.servico-card.selected {
+    border-color: #000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.servico-card.selected .servico-nome::before {
+    content: '✓ ';
+    font-weight: 700;
+}
+
+/* Subtotal */
+.servicos-subtotal {
+    margin-top: 24px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.subtotal-titulo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.subtotal-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subtotal-lista li {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #333;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.subtotal-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 2px solid #000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #000;
+}
+
 .stacks {
     width: 100%;
     height: 0px;
