@@ -118,8 +118,9 @@
                     </div>
                 </div>
 
-                <div class="servicos-subtotal" style="display: none;">
+                <div class="servicos-subtotal">
                     <h3 class="subtotal-titulo">Resumo:</h3>
+                    <p class="subtotal-vazio">Selecione os serviços acima para montar seu orçamento.</p>
                     <ul class="subtotal-lista"></ul>
                     <div class="subtotal-total">
                         <span>Total:</span>
@@ -212,7 +213,15 @@
                 });
 
                 subtotalValor.textContent = formatBRL(total);
-                subtotalBox.style.display = selected.length > 0 ? 'block' : 'none';
+                var vazio = document.querySelector('.subtotal-vazio');
+                var totalRow = document.querySelector('.subtotal-total');
+                if (selected.length > 0) {
+                    vazio.style.display = 'none';
+                    totalRow.style.display = 'flex';
+                } else {
+                    vazio.style.display = 'block';
+                    totalRow.style.display = 'none';
+                }
 
                 // Update WhatsApp link
                 if (selected.length > 0) {

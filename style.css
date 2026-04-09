@@ -811,6 +811,18 @@ header.scrolled .projetos-btn {
     margin-bottom: 12px;
 }
 
+.subtotal-vazio {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+}
+
+.subtotal-total {
+    display: none;
+}
+
 .subtotal-lista {
     list-style: none;
     padding: 0;
